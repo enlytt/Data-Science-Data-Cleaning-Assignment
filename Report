@@ -1,0 +1,62 @@
+Data Cleaning and Exploratory Data Analysis (EDA) Report
+
+1. Introduction
+
+The Titanic dataset is widely used for data analysis and machine learning tasks. It contains information about passengers aboard the Titanic, including demographic details, ticket information, and survival status. This report outlines the data cleaning process and exploratory data analysis (EDA) conducted on the dataset to prepare it for further analysis.
+
+2. Data Cleaning
+
+2.1 Loading and Inspecting the Dataset
+
+The dataset was loaded using the Pandas library. The initial inspection revealed missing values in the Age, Embarked, and Cabin columns. Additionally, duplicate records and potential outliers were identified.
+
+2.2 Handling Missing Values
+
+Age: Missing values were replaced with the median age to maintain statistical consistency.
+
+Embarked: Missing values were filled with the mode, as it is a categorical feature.
+
+Cabin: This column had too many missing values and was removed from the dataset to avoid bias.
+
+2.3 Removing Duplicate Records
+
+Duplicate entries were identified and removed to ensure data integrity and avoid skewed analysis.
+
+2.4 Outlier Detection and Treatment
+
+The Interquartile Range (IQR) method was applied to the Fare column to detect and remove extreme outliers that could distort statistical summaries.
+
+2.5 Standardizing Categorical Values
+
+The Sex column was standardized to ensure uniformity, converting all values to consistent capitalization.
+
+After these cleaning steps, the cleaned dataset was saved as "titanic_cleaned.csv".
+
+3. Exploratory Data Analysis (EDA)
+
+3.1 Univariate Analysis
+
+Summary Statistics: Descriptive statistics (mean, median, mode, variance, and skewness) were calculated for numerical columns.
+
+Age Distribution: A histogram with KDE overlay showed the passenger age distribution, revealing a peak around 30 years.
+
+Fare Distribution: A box plot identified outliers in fare values before their removal.
+
+3.2 Bivariate Analysis
+
+Correlation Matrix: A heatmap was generated to analyze relationships between numerical variables. Fare and Pclass showed notable correlations.
+
+Survival vs Age: A box plot illustrated how survival rates varied across different age groups, showing that younger passengers had higher survival rates.
+
+3.3 Multivariate Analysis
+
+Pair Plot: A pair plot with the survival class as a hue was generated to visualize relationships between multiple variables.
+
+Heatmap: The final correlation heatmap confirmed strong relationships between Fare, Pclass, and survival probability.
+
+4. Conclusion
+
+The data cleaning process successfully addressed missing values, removed duplicate records, treated outliers, and standardized categorical variables. The EDA provided meaningful insights into variable distributions and their relationships. The cleaned dataset is now suitable for further predictive modeling and advanced analysis.
+
+This analysis highlights key patterns in Titanic passenger survival rates, which can be used to develop predictive models in future studies.
+
